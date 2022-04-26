@@ -1980,7 +1980,7 @@ class Instagram
 
         $edgesArray = $jsonResponse['data']['user']['edge_follow']['edges'];
         if (count($edgesArray) === 0) {
-            throw new InstagramException('Failed to get following of account id ' . $accountId . '. The account is private.', static::HTTP_FORBIDDEN);
+            throw new InstagramException('Failed to get following of account id ' . $accountId . '. The account is private.', static::HTTP_FORBIDDEN, $response);
         }
 
         $accounts = [];
