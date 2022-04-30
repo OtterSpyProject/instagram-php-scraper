@@ -2448,11 +2448,11 @@ class Instagram
     /**
      * @param string $accountId Account id of the profile to query
      *
-     * @return void
+     * @return Response
      */
-    public function follow($accountId){
+    public function follow($accountId): Response {
         // return empty string and 302 code
-        Request::post(Endpoints::getFollowUrl($accountId), $this->generateHeaders($this->userSession));
+        return Request::post(Endpoints::getFollowUrl($accountId), $this->generateHeaders($this->userSession));
     }
 
     /**
